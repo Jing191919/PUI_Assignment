@@ -1,3 +1,3 @@
-Deployed website: add the URL to your deployed website
+[Deployed website:] (https://jing191919.github.io/PUI_Assignment/)
 
-Repository link: add the URL to this repository
+[Repository link:] (https://github.com/Jing191919/PUI_Assignment) 
