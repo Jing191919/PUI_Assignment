@@ -1,0 +1,297 @@
+
+/* Navigation Bar */
+.Bakery_Heading{
+    width:50%;
+    background-color:red;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items:flex-start;
+}
+
+.Bakery_Heading a {
+    font-size:20px;
+    text-decoration:none;
+    border:none;
+    box-shadow:none;
+}
+
+.Navigation_WithLine{
+    height:150px;
+    background-color:greenyellow;
+    display:flex;
+    flex-direction:column;
+    flex: 1 0 auto;
+    margin:20px 0px;
+}
+
+.Navigation{
+    background-color:blue;
+    display:flex;
+    flex-direction:row;
+    justify-content: end;
+    gap:40px;
+    padding:20px 40px;
+}
+
+.Navigation_Title{
+    font-size:20px;
+    margin-top:auto;
+    margin-right:auto;
+}
+
+body {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+}
+
+.logostyle {
+    width:300px;
+    text-align:left;
+}
+
+.First_hr{
+    height:3px; 
+    border-width:0; 
+    color:#000000;
+    background-color:black
+}
+
+.HighlightYellow{
+    background-color: yellow;
+}
+
+
+
+/* Cart Interface */
+.Detail_Image_1{
+    width:170px;
+    border: 2px solid #000;
+}
+
+.RemoveStyle{
+    font-size: 12px;
+}
+
+.Cart_ProductIamge{
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+
+.Cart_ProductName{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    width:50%;
+}
+
+.Cart_ProductName > div{
+    background-color: aqua;;
+    line-height:120%;
+}
+
+.Cart_ProductPrice{
+    background-color:pink;
+    text-align: right;
+    width:15%;
+}
+
+.Cart_ProductInformation{
+    background-color:aliceblue;
+    display:flex;
+    flex-direction:row;
+    gap:100px;
+    align-items:center;
+    margin:10px 20px;
+}
+
+.Second_hr{
+    height:3px; 
+    color:black;
+    background-color:black;
+    margin:20px;
+}
+
+.Cart_Total{
+    background-color:gold;
+    display:flex;
+    flex-direction: row;
+    justify-content:center;
+    gap:300px;
+    margin:20px;
+}
+
+.ButtonStyle{
+    background-color: yellow; 
+    font-size: 18px; 
+    width:150px; 
+    height:45px; 
+    border:2px solid black;
+}
+
+.Cart_Button{
+    background-color:beige;
+    margin:10px 20px;
+}
+
+.Cart_InformationWithLine{
+    display:flex;
+    flex-direction: column;
+    background-color:blueviolet;
+    align-items:stretch;
+}
+
+.Cart_Content{
+    margin:20px;
+    padding:20px;
+    background-color:brown;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    width:50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Detail Interface */
+
+.Detail_Image_2{
+    width:550px;
+    border:3px solid black;
+}
+
+.Detail_Information{
+    background-color:blueviolet;
+    display:flex;
+    flex-direction:row;
+    align-items:stretch;
+    justify-content: center;
+    gap:20px;
+}
+
+.Detail_Content{
+    height:auto;
+    background-color:gold;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+    gap:40px;
+    align-items:stretch;
+    padding:25px;
+}
+
+.IntroductionStyle{
+    margin:auto;
+    width:250px;
+    font-size: 18px; 
+    text-align:left;
+    line-height:120%;
+    background-color:green;
+}
+
+.Drop_Down_Box{
+    margin:auto;
+    width:250px;
+    text-align:left;
+    font-size:20px;
+}
+
+#Detail_Box{
+    font-size:20px;
+    width:250px;
+    height: 40px;
+    margin:10px 0px;
+    border:2px solid black;
+}
+
+.ButtonStyle_2{
+    background-color: yellow; 
+    font-size: 18px; 
+    width:150px; 
+    height: 40px; 
+    border:2px solid black;
+}
+
+.Add_ToCart{
+    background-color:aquamarine;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-evenly;
+    align-items: baseline;
+}
+
+
+
+
+
+
+
+
+
+/* Gallery Interface */
+
+.Detail_Image_3{
+    width:170px;
+    border:1px solid black;
+}
+
+.Gallery_ProductName{
+    text-decoration-line: underline;
+}
+
+.Gallery_SingleProduct a {
+    font-size:15px;
+    font-weight:lighter;
+    width:auto;
+    color:black;
+    line-height:120%;
+    text-decoration:none;
+    border:none;
+    box-shadow:none;
+}
+
+.Gallery_SingleProduct a:hover{
+    background-color: yellow;
+    width:auto;
+}
+
+.Gallery_SingleProduct{
+    /* background-color:pink; */
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+    margin:10px;
+}
+
+.Gallery_AllProducts{
+    /* background-color:gold; */
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-around;
+    width:40%;
+    margin:40px 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
