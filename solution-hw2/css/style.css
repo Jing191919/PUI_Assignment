@@ -209,7 +209,7 @@ body {
     font-size:20px;
 }
 
-#Detail_Box{
+.Detail_Box{
     font-size:20px;
     width:250px;
     height: 40px;
