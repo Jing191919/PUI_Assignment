@@ -2,7 +2,7 @@
 /* Navigation Bar */
 .Bakery_Heading{
     width:50%;
-    background-color:red;
+    /* background-color:red; */
     display:flex;
     flex-direction:row;
     justify-content: space-between;
@@ -18,7 +18,7 @@
 
 .Navigation_WithLine{
     height:150px;
-    background-color:greenyellow;
+    /* background-color:greenyellow; */
     display:flex;
     flex-direction:column;
     flex: 1 0 auto;
@@ -26,7 +26,7 @@
 }
 
 .Navigation{
-    background-color:blue;
+    /* background-color:blue; */
     display:flex;
     flex-direction:row;
     justify-content: end;
@@ -91,18 +91,18 @@ body {
 }
 
 .Cart_ProductName > div{
-    background-color: aqua;;
+    /* background-color: aqua;; */
     line-height:120%;
 }
 
 .Cart_ProductPrice{
-    background-color:pink;
+    /* background-color:pink; */
     text-align: right;
     width:15%;
 }
 
 .Cart_ProductInformation{
-    background-color:aliceblue;
+    /* background-color:aliceblue; */
     display:flex;
     flex-direction:row;
     gap:100px;
@@ -118,7 +118,7 @@ body {
 }
 
 .Cart_Total{
-    background-color:gold;
+    /* background-color:gold; */
     display:flex;
     flex-direction: row;
     justify-content:center;
@@ -135,21 +135,21 @@ body {
 }
 
 .Cart_Button{
-    background-color:beige;
+    /* background-color:beige; */
     margin:10px 20px;
 }
 
 .Cart_InformationWithLine{
     display:flex;
     flex-direction: column;
-    background-color:blueviolet;
+    /* background-color:blueviolet; */
     align-items:stretch;
 }
 
 .Cart_Content{
     margin:20px;
     padding:20px;
-    background-color:brown;
+    /* background-color:brown; */
     display:flex;
     flex-direction:column;
     align-items:flex-end;
@@ -174,7 +174,7 @@ body {
 }
 
 .Detail_Information{
-    background-color:blueviolet;
+    /* background-color:blueviolet; */
     display:flex;
     flex-direction:row;
     align-items:stretch;
@@ -184,7 +184,7 @@ body {
 
 .Detail_Content{
     height:auto;
-    background-color:gold;
+    /* background-color:gold; */
     display:flex;
     flex-direction:column;
     justify-content: space-around;
@@ -199,7 +199,7 @@ body {
     font-size: 18px; 
     text-align:left;
     line-height:120%;
-    background-color:green;
+    /* background-color:green; */
 }
 
 .Drop_Down_Box{
@@ -226,7 +226,7 @@ body {
 }
 
 .Add_ToCart{
-    background-color:aquamarine;
+    /* background-color:aquamarine; */
     display:flex;
     flex-direction:row;
     justify-content:space-evenly;
