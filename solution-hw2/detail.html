@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
     rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<script defer src="js/app.js"></script>
   
   <body>
 
@@ -57,7 +58,7 @@
           <img class="Detail_Image_2" src="assets/original-cinnamon-roll.jpeg" alt="original-cinnamon-roll">
         </div>
   
-        <div class="Detail_Content">
+        <div class="Detail_Content" id="detailContent">
   
           <div class="IntroductionStyle">
             Customize our delicious, <br>
@@ -67,8 +68,8 @@
     
     
           <div class="Drop_Down_Box">
-            <label for="glazing-names">Glazing:</label> 
-            <select id="glazing-names" class="Detail_Box">
+            <label for="glazingNames">Glazing:</label> 
+            <select id="glazingNames" class="Detail_Box" onchange="glazingChange()">
               <option value="keep_original">Keep original</option>
               <option value="suger_milk">Suger milk</option>
               <option value="vanilla_milk">Vanilla milk</option>
@@ -78,8 +79,8 @@
     
     
           <div class="Drop_Down_Box">
-            <label for="size-names">Pack size:</label> 
-            <select id="size-names" class="Detail_Box">
+            <label for="sizeNames">Pack size:</label> 
+            <select id="sizeNames" class="Detail_Box" onchange="sizeChange()">
               <option value="number1">1</option>
               <option value="number3">3</option>
               <option value="number6">6</option>
@@ -89,7 +90,8 @@
   
           <div class="Add_ToCart">
             <div>
-              $2.49
+              <span>$</span>
+              <span id="output">2.49</span>
             </div>
 
             <div>
