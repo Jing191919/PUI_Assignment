@@ -233,6 +233,11 @@ body {
     align-items: baseline;
 }
 
+.totalMoney{
+    /* background-color:palegreen; */
+    width:70px;
+}
+
 
 
 
