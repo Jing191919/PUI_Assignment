@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Cart</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,100;1,200&display=swap"
+    rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script defer src="js/cartGo.js"></script>
+  
+  <body>
+
+    <div class="Bakery_Heading">
+
+      <div class="logostyle">
+        <a href="gallery.html">
+          <img src="assets/logo-01.svg" alt="Bun Bun Logo">
+        </a>
+      </div>
+  
+      <div class="Navigation_WithLine">
+  
+        <div class="Navigation">
+    
+          <div>
+            <a href="gallery.html">
+              <span > PRODUCTS </span>
+            </a>
+          </div>
+    
+          <div>
+            <a href="cart.html">
+              <span class="HighlightYellow"> CART </span>
+            </a>
+          </div>
+        </div>
+  
+        <div>
+          <hr class="First_hr">
+        </div>
+
+        <div class="Navigation_Title">
+          Shopping Cart
+        </div>
+        
+      </div>
+
+    </div>
+
+    <div class="Cart_Content">
+
+      <div class="Cart_InformationWithLine">
+
+      <template id="roll-template">
+        <div class="Cart_ProductInformation">
+
+          <div class="Cart_ProductIamge">
+            <div>
+              <img class="Detail_Image_1" id="roll-cart-image" src="assets/original-cinnamon-roll.jpeg" alt="original-cinnamon-roll" >
+            </div>
+      
+            <div>
+              <span class="RemoveStyle" id="icon-delete"> <u>Remove</u></span>
+            </div>
+          </div>
+      
+          <div class="Cart_ProductName">
+            <div id="roll-type"></div>
+            <div id="roll-glazing"></div>
+            <div id="roll-size"></div>
+          </div>
+      
+          <div class="Cart_ProductPrice" id="roll-price"> </div>
+    
+        </div>
+      </template>
+  
+      </div>
+
+      <div>
+        <hr class="Second_hr">
+      </div>
+  
+      <div class="Cart_Total">
+        <div>Total</div>
+        <div class="Cart_ProductPrice" id="total-price">$29.94</div>
+      </div>
+  
+      <div class="Cart_Button">
+        <button class="ButtonStyle" type="button">Checkout</button>
+      </div>
+
+    </div>
+
+
+    
+
+  </body>
+</html>

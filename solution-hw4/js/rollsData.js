@@ -106,6 +106,7 @@ class Roll {
         this.size = packSize;
         this.basePrice = basePrice;
     }
+
 }
 
 
@@ -131,7 +132,7 @@ function updateCart(){
 };
 
 document.querySelector("#cartButton").onclick = function(){
-    updateCart();
+    updateCart(); 
 };
 
 
