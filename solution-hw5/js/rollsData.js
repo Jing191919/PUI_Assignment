@@ -25,9 +25,35 @@ const rolls = {
     }    
 };
 
+class Roll {
+
+    constructor(rollType, rollGlazing, packSize, rollPrice) {
+        this.rollType = rollType;
+        this.glazing =  rollGlazing;
+        this.size = packSize;
+        this.basePrice = rollPrice;
+    }
+}
+
+let roll = {
+    basePrice: 2.49,
+
+    glazingOption:"Original",
+    glazingOptions: ["Original", "Suger Milk", "Vanilla Milk","Double Chocolate"],
+    glazingAdaption: 0,
+    glazingAdaptions: [0,0,0.5,1.5],
+
+    packSize:"1",
+    packSizes:["1","3","6","12"],
+    sizeAdaption: 1,
+    sizeAdaptions:[1,3,5,10],
+}
+
+let cart=[];
+
 
 const queryString = window.location.search;
-// console.log(queryString);
+    // console.log(queryString);
 
 const params = new URLSearchParams(queryString);
 // console.log(params);
@@ -44,25 +70,24 @@ rollPrice.innerText = rolls[chosenRoll]["basePrice"];
 const rollImage = document.querySelector('#roll-img');
 rollImage.src = './assets/' + rolls[chosenRoll]["imageFile"];
 
-let roll = {
-    basePrice: 2.49,
+function addNewRoll(rollType,rollGlazing,packSize,rollPrice){
+    let rollOne = new Roll(rollType,rollGlazing,packSize,rollPrice);
+    cart.push(rollOne);
+    console.log(cart);
 
-    glazingOption:"keep_original",
-    glazingOptions: ["keep_original", "suger_milk", "vanilla_milk","double-chocolate"],
-    glazingAdaption: 0,
-    glazingAdaptions: [0,0,0.5,1.5],
-
-    packSize:"1",
-    packSizes:["1","3","6","12"],
-    sizeAdaption: 1,
-    sizeAdaptions:[1,3,5,10],
+    return rollOne;
 }
 
-roll.basePrice = rolls[chosenRoll]["basePrice"];
+document.querySelector("#cartButton").onclick = function(){
+    addNewRoll(chosenRoll,roll.glazingOption,roll.packSize,rolls[chosenRoll]["basePrice"]); 
+};
 
-function glazingChange(){
+function calSinglePrice(){
     let rollGlazingElement = document.querySelector('#glazingNames');
     roll.glazingOption = rollGlazingElement.value;
+
+    let rollSizeElement = document.querySelector('#sizeNames');
+    roll.packSize = rollSizeElement.value;
 
     for(let i=0; i<roll.glazingOptions.length; i++){
         if (roll.glazingOptions[i] === roll.glazingOption){
@@ -73,15 +98,6 @@ function glazingChange(){
         }
     }
 
-    let output = (roll.basePrice + roll.glazingAdaption) * roll.sizeAdaption;
-    console.log(output);
-    document.querySelector('#output').textContent = output.toFixed(2);
-}
-
-function sizeChange(){
-    let rollSizeElement = document.querySelector('#sizeNames');
-    roll.packSize = rollSizeElement.value;
-
     for(let j=0; j<roll.packSizes.length; j++){
         if (roll.packSizes[j] === roll.packSize){
             roll.sizeAdaption = roll.sizeAdaptions[j];
@@ -91,52 +107,14 @@ function sizeChange(){
     }
 
     let output = (roll.basePrice + roll.glazingAdaption) * roll.sizeAdaption;
-    console.log(output);
     document.querySelector('#output').textContent = output.toFixed(2);
+
 }
 
-let cart=[];
-
-class Roll {
-
-    constructor(rollType, rollGlazing, packSize, basePrice) {
-        this.rollType = rollType;
-        this.glazing =  rollGlazing;
-        this.size = packSize;
-        this.basePrice = basePrice;
-    }
-}
-
-
-function updateCart(){
-
-    let rollOne = new Roll();
-
-    rollOne.rollType = chosenRoll;
-    // console.log(rollOne.rollType);
-
-    rollOne.glazing = roll.glazingOption;
-    // console.log(rollOne.glazing);
-
-    rollOne.size = roll.packSize;
-    // console.log(rollOne.size);
-
-    rollOne.basePrice = rolls[chosenRoll]["basePrice"];
-    // console.log(rollOne.basePrice);
-
-    // console.log(rollOne);
-    cart.push(rollOne);
-    console.log(cart);
+document.querySelector("#glazingNames").onchange = function(){
+    calSinglePrice();
 };
 
-document.querySelector("#cartButton").onclick = function(){
-    updateCart(); 
+document.querySelector("#sizeNames").onchange = function(){
+    calSinglePrice();
 };
-
-
-
-
-
-
-
-
