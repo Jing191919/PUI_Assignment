@@ -12,9 +12,7 @@ class Roll {
     }
 }
 
-let addRoll = true;
-let rollArrayNumber=[];
-let deleteNumber=0;
+
 
 const rolls = {
     "Original": {
@@ -59,9 +57,12 @@ let roll = {
     totalPrice: 0,
 }
 
+let addRoll = true;
+let rollArrayNumber=[];
+let deleteNumber=0;
+
 function retrieveFromLocalStorage(){
     let rollJSON = localStorage.getItem('storedRolls');
-    // console.log("hi");
     console.log(rollJSON);
 
     if(rollJSON === null){
@@ -69,23 +70,21 @@ function retrieveFromLocalStorage(){
     }
 
     let rollArray = JSON.parse(rollJSON);
-    console.log(rollArray);
+    // console.log(rollArray);
 
     let n=0;
 
     for(let rollData of rollArray){
-        // console.log(rollData);
-
         let roll = addNewRoll(rollData.rollType,rollData.glazing,rollData.size,rollData.basePrice);
         
         createElement(roll,n);
 
         rollArrayNumber.push(n);
-        console.log(rollArrayNumber);
+        // console.log(rollArrayNumber);
 
         n=n+1;
         
-        console.log(roll.element3);
+        // console.log(roll.element3);
         console.log("making rolls from array///");
     }
 }
@@ -104,12 +103,8 @@ function createElement(rollCart,n){
 
     let temp1 = document.querySelector("#roll-template").content;
     let clone = document.importNode(temp1,true);
-    // console.log("clone:");
-    // console.log(clone);
 
     let container = document.querySelector(".Cart_InformationWithLine");
-    // console.log("container:");
-    // console.log(container);
 
     container.prepend(clone);
 
@@ -118,12 +113,11 @@ function createElement(rollCart,n){
     rollCart.element3 = n;
 
     let btnDelete = rollCart.element2.querySelector("#icon-delete");
-    // console.log("btnDelete:");
-    // console.log(btnDelete);
+
     btnDelete.addEventListener('click', () => {
         deleteRoll(rollCart,deleteNumber);
         deleteNumber = deleteNumber+1;
-        console.log("deleteNumber"+deleteNumber);
+        // console.log("deleteNumber:"+deleteNumber);
       });
 
     updateElement(rollCart);
@@ -132,7 +126,6 @@ function createElement(rollCart,n){
 function updateElement(rollCart){
     let rollTypeElement = rollCart.element.querySelector("#roll-type");
     rollTypeElement.innerText = rollCart.type;
-    // console.log("rollTypeElement:"+rollTypeElement);
 
     let rollGlazingElement = rollCart.element.querySelector("#roll-glazing");
     rollGlazingElement.innerText = "Glazing:"+rollCart.glazing;
@@ -163,7 +156,6 @@ function deleteRoll(rollCart,deleteNumber){
     let deletePrice = calSinglePrice(rollCart,false);
 
     let deleteTotalPrice = deletePrice.totalPrice;
-    // console.log("deleteTotalPrice:"+deleteTotalPrice);
 
     let deleteTotalPriceElement = document.querySelector("#total-price");
     deleteTotalPriceElement.innerText = "$ "+ deleteTotalPrice.toFixed(2);
@@ -172,48 +164,49 @@ function deleteRoll(rollCart,deleteNumber){
     rollCart.element2.remove();
 
     let rollJSON = localStorage.getItem('storedRolls');
-    console.log(rollJSON);
 
     if(rollJSON === null){
         return;
     }
 
     let rollArray = JSON.parse(rollJSON);
-    // console.log("rollArray before delete:");
+
+    // console.log("_____________________");
+    // console.log("rollArrayNumber:");
+    // console.log(rollArrayNumber);
+
+    let a = rollCart.element3;
+    // console.log("a:"+a);
+
+    // console.log("rollArray:");
     // console.log(rollArray);
 
-    if(deleteNumber === 0 ){
-        console.log("Delete First One");
-        lastDeleteNumber = rollCart.element3;
-        console.log("Round One:"+lastDeleteNumber);
+    if(rollArrayNumber[a]>=0){
+        rollArray.splice(rollArrayNumber[a],1);
+    }
 
-        rollArray.splice(rollCart.element3,1);
-    } else{
-        if(lastDeleteNumber < rollCart.element3){
-            console.log("New Round:"+lastDeleteNumber);
-            console.log("last round delete the number before me");
-            console.log("Delete which roll");
-            console.log(rollCart);
-            console.log("Delete which rollArray");
-            console.log(rollCart.element3-deleteNumber);
+    console.log("New Cart:");
+    console.log(rollArray);
+    
 
-            lastDeleteNumber = rollCart.element3;
-
-            rollArray.splice(rollCart.element3-deleteNumber,1);
-            console.log(rollArrayNumber);
-        } else{
-            console.log("last round delete the number after me");
-            rollArray.splice(rollCart.element3,1);
+    rollArrayNumber[a] = -100;
+    
+    if(a != rollArrayNumber.length-deleteNumber){
+        // console.log("success");
+        for(let z=a+1; z<rollArrayNumber.length;z++){
+            rollArrayNumber[z] = rollArrayNumber[z]-1;
+            // console.log("Number"+z+":"+rollArrayNumber[z]);
         }
     }
+
+    // console.log("updated rollArrayNumber:");
+    // console.log(rollArrayNumber);
 
     updateLocalStorage(rollArray);
 
 }
 
 function updateLocalStorage(rollArray){
-    let n=0;
-
     let rollJSON = JSON.stringify(rollArray);
 
     if(rollJSON === null){
@@ -221,7 +214,6 @@ function updateLocalStorage(rollArray){
     }
 
     localStorage.setItem('storedRolls',rollJSON);
-
 }
  
 
@@ -230,13 +222,11 @@ function calSinglePrice(rollCart,addRoll){
     roll.glazingOption = rollCart.glazing;
     roll.packSize = rollCart.size;
     roll.basePrice = rolls[rollCart.type]["basePrice"]
-    // console.log(rollCart.glazing);
 
     for(let i=0; i<roll.glazingOptions.length; i++){
         if (roll.glazingOptions[i] === roll.glazingOption){
             roll.glazingAdaption = roll.glazingAdaptions[i];
-            // console.log('roll galizing Options:', roll.glazingOptions[i]);
-            // console.log('glazing apdations:', roll.glazingAdaptions[i]);
+
             break;
         }
     }
@@ -244,17 +234,11 @@ function calSinglePrice(rollCart,addRoll){
     for(let j=0; j<roll.packSizes.length; j++){
         if (roll.packSizes[j] === roll.packSize){
             roll.sizeAdaption = roll.sizeAdaptions[j];
-            // console.log('roll size Options:', roll.sizeAdaptions[j]);
-            // console.log('size apdations:', roll.sizeAdaption);
         }
     }
     
-    // console.log("roll.basePrice:"+roll.basePrice);
-    // console.log("roll.glazingAdaption:"+roll.glazingAdaption);
-    // console.log("roll.sizeAdaption:"+roll.sizeAdaption);
 
     let output = (roll.basePrice + roll.glazingAdaption) * roll.sizeAdaption;
-    // console.log("output:"+output);
 
     if(addRoll === true){
         let totalPrice = roll.totalPrice += output;
