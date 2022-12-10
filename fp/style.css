@@ -124,8 +124,8 @@ fieldset {
 	position: relative;
 }
 
-/* Hide all except first fieldset */
-fieldset:not(:first-of-type) {
+/*Hide all except first fieldset*/
+#cr-tutorial fieldset:not(:first-of-type) {
 	display: none;
 }
 
@@ -148,7 +148,7 @@ fieldset:not(:first-of-type) {
 	box-shadow: 0 0 0 2px #f6f6f6;
 }
 
-/* progressbar */
+/*progressbar*/
 #progressbar {
 	margin-bottom: 30px;
 	overflow: hidden;

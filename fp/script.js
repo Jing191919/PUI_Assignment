@@ -29,7 +29,6 @@ $(".next").click(function(){
 			current_fs.hide();
 			animating = false;
 		}, 
-		easing: 'easeInOutBack'
 	});
 });
 
@@ -57,6 +56,5 @@ $(".previous").click(function(){
 			current_fs.hide();
 			animating = false;
 		}, 
-		easing: 'easeInOutBack'
 	});
 });
