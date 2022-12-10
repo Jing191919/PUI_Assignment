@@ -1,0 +1,347 @@
+@font-face {
+	font-family:"bakery-font-BM";
+	src:url(fonts/BwModelica-Medium.otf);
+}
+
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+:root {
+	font-family: bakery-font-BM;
+}
+
+.action-button{
+	color: #6d3200;
+	font-family: bakery-font-BM;
+}
+
+
+html {
+	background:	#f0d1a0;
+}
+
+
+/*Main Content*/
+
+/* Homepage button */
+.btn{
+	display:flex;
+	justify-content: center;
+	width:40%;
+}
+
+.btn-box {
+	margin-bottom: 40px;
+	width: 150px;;
+	position:center;
+}
+
+.btn-box a{
+	text-decoration: none;
+}
+
+.btn-one {
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	cursor:pointer;
+	
+	color: #6d3200;
+	transition: all 0.3s;
+	position: relative;
+}
+
+.btn-one span {
+	transition: all 0.3s;
+}
+
+.btn-one::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.3s;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color:#422308;
+	border-bottom-color:#422308;
+	transform: scale(0.1, 1);
+}
+
+.btn-one:hover span {
+	letter-spacing: 2px;
+}
+
+.btn-one:hover::before {
+	opacity: 1; 
+	transform: scale(1, 1); 
+}
+
+.btn-one::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.3s;
+	background-color: rgba(66,35,8,0.2);
+}
+
+.btn-one:hover::after {
+	opacity: 0; 
+	transform: scale(0.1, 1);
+}
+
+/* The Content on Each Page */
+#cr-tutorial {
+	width: calc(100% - 200px);
+	height: calc(100% - 40px);
+	min-height: calc(100vh - 200px);
+	margin: 50px auto;
+	text-align: center;
+	position: relative;
+}
+
+/* The Content on Each Page */
+fieldset {
+	border: 0 none;
+	padding: 50px 20px;
+	box-sizing: border-box;
+	width: 80%;
+	height:1000px;
+	margin: 0 10%;
+	position: relative;
+}
+
+/* Hide all except first fieldset */
+fieldset:not(:first-of-type) {
+	display: none;
+}
+
+/* Buttons */
+.action-button {
+	color:	#f0d1a0;
+	background:#6d3200;
+
+	width: 100px;
+	font-weight: bold;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+}
+
+/* Buttons Hover */
+.action-button:hover {
+	box-shadow: 0 0 0 2px #f6f6f6;
+}
+
+/* progressbar */
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	counter-reset: step;
+}
+
+#progressbar li {
+	list-style-type: none;
+	color: #6d3200;
+
+	font-size: 15px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	width: 33.33%;
+
+	float: left;
+	position: relative;
+}
+
+#progressbar li:before {
+	color: #6d3200;
+	background: #f6f6f6;
+	
+	content: counter(step);
+	counter-increment: step;
+	display: block;
+
+	width: 40px;
+	line-height: 30px;
+	border-radius: 200px;
+	margin: 0 auto 15px auto;
+}
+
+/*progressbar connectors*/
+#progressbar li:after {
+	background: #f6f6f6;
+
+	content: '';
+	width: 100%;
+	height: 3px;
+	
+	position: absolute;
+	left: -50%;
+	top: 15px;
+	z-index: -1;
+}
+
+#progressbar li:first-child:after {
+	content: none; 
+}
+
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: #6d3200;
+	color: #f6f6f6;
+}
+
+
+/* ____________ */
+/* Main Interface Css */
+
+/* Tutorial Title */
+.tutorial-title ul {
+	list-style: none;
+	color: #422308;
+
+	padding: 15px 0;
+	margin: 0 auto 20px auto;
+
+	font-size: x-large;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+/* Word Tutorial Div*/
+.recipe-content {
+	width: 100%;
+	display: flex;
+}
+
+.left-list {
+	padding-right: 60px;
+}
+
+.right-list {
+	padding-left: 60px;
+}
+
+/* Word Tutorial Bullet Point*/
+ol {
+	letter-spacing:1px;
+	list-style: none;
+	counter-reset: counter;
+	margin: 0;
+	padding: 0;
+	margin-left: 40px;
+
+	text-align:left;
+}
+
+ol > li {
+	counter-increment: counter;
+	margin-bottom: 10px;
+	width: 95%;
+	position: relative;
+}
+
+ol > li::before {
+	content: counter(counter) ".";
+	font-weight: 600;
+	font-size: 30px;
+	color: #6d3200;
+	min-width: 50px;
+	max-width: 50px;
+	position: absolute;
+	margin-left: -60px;
+	text-align: right;
+}
+
+ol > ul > li {
+	margin-left: 24px;
+	list-style-type: square;
+	margin-top: 8px;
+	margin-bottom: 16px;
+}
+
+
+/* Illustration for each step */
+figure img {
+	display: block;
+	flex:3;
+
+	border-radius: 40%;
+	position: relative;
+	object-fit: cover;
+
+	width: 70%;
+	margin: 16px auto 20px auto;
+}
+
+
+@media screen and (max-width: 768px) {
+	#cr-tutorial {
+		width: calc(100% - 40px);
+		height: calc(100% - 40px);
+		min-height: calc(100vh - 40px);
+		margin: 2px auto;
+	}
+
+	.btn{
+		width:100%;
+	}
+	
+	.btn-box {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		width: 100%;;
+	}
+
+	.recipe-content {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		margin-top: 50px;
+	}
+
+	ol {
+		letter-spacing:1.5px;
+	}
+
+	.left-list {
+		padding-right: 0;
+		padding-bottom: 50px;
+	}
+
+	.right-list {
+		padding-left: 0;
+		padding-top: 50px;
+	}
+
+	.tutorial-title ul {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 20px 0;
+	}
+
+	.tutorial-title ul li {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		min-width: 50%;
+		padding: 20px;
+	}
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title> Cake Roll Tutorial </title>          
+	<link rel="stylesheet" href="./style-homepage.css">
+	<script src="./check_box_helper.js"></script>
+</head>
+
+<body>
+<!-- homepage -->
+<section id="cover">
+
+	<span class="side">
+		<!-- Bakery Name -->
+		<h2>Jing's bakery</h2>
+	</span>
+
+	<div class="content">
+		<figure>
+			<img src="assets/cake roll.jpg" alt="Two Cake Rolls in a plate with a fork nearby">
+		</figure>
+		<h1>Let's Get it &amp; Rolling!</h1>
+		<span><a href="#recipe" class="highlight-button">Prepare Ingredients &#10549;</a></span>
+	</div>
+</section>
+
+<!-- Recipe page -->
+<section id="recipe">
+	<h1>Cake Roll Ingredients</h1>
+
+	<!-- Link to tutorials -->
+	<div class="next_section">
+		<span class="finishing_button"><a href="bar.html">Finished preparing! Let's start making &#8594;</a></span>
+	</div>
+
+	<div class="recipe-content">
+		<div class="left-list">
+			<h2>Ingredients For Batter</h2>
+			<div class="ingredients">
+
+				<div class="recipe_details">
+					<ul>
+						<li><span>Needed to be weighed</span></li>
+					</ul>
+				</div>
+				<label class="container">40g Vegetable Oil
+					<input type="checkbox" onclick="check_button_status()">
+				</label>
+				<label class="container">40g Milk
+					<input type="checkbox" onclick="check_button_status()">
+				</label>
+				<label class="container">40g Powdered Sugar
+					<input type="checkbox" onclick="check_button_status()">
+				</label>
+				<label class="container">40g Cake Flour
+					<input type="checkbox" onclick="check_button_status()">
+				</label>
+
+				<div class="recipe_details">
+					<ul>
+						<li><span>Needed to be divided</span></li>
+					</ul>
+				</div>
+				<label class="container">4 Egg Yolk
+					<input type="checkbox" onclick="check_button_status()">
+				</label>
+				<label class="container">4 Egg White
+					<input type="checkbox" onclick="check_button_status()">
+				</label>
+
+			</div>
+		</div>
+
+		<div class="right-list">
+			<h2>Ingredients For Filling</h2>
+			<div class="ingredients">
+				
+				<div class="recipe_details">
+					<ul>
+						<li><span>Needed to be weighed</span></li>
+					</ul>
+				</div>
+				
+				<label class="container">200g Heavy Whipped Cream
+					<input type="checkbox" onclick="check_button_status()">
+				</label>
+				<label class="container">10g Powdered Sugar
+					<input type="checkbox" onclick="check_button_status()">
+				</label>
+		</div>
+
+		</div>
+
+		
+
+
+	
+</section>
+
+</body>
+</html>
